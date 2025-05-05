@@ -1,0 +1,59 @@
+<!-- faq.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - QuickShip</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">QuickShip</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="faq">
+            <h1>Frequently Asked Questions</h1>
+            
+            <div class="faq-item">
+                <h3>How accurate are the prices shown?</h3>
+                <p>Our prices are updated weekly from official courier websites. For exact rates, please book through our platform.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Is there any hidden charge?</h3>
+                <p>No, we show the final price including all charges. What you see is what you pay.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How do I track my shipment?</h3>
+                <p>After booking, you'll receive a tracking link via email. You can also use the tracking page of the respective courier.</p>
+            </div>
+
+            <h2>Still have questions?</h2>
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Question</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 QuickShip. All rights reserved.</p>
+    </footer>
+</body>
+</html>
