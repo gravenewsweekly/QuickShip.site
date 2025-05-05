@@ -1,0 +1,61 @@
+<!-- confirm.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - QuickShip</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">QuickShip</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="confirmation">
+            <h1>Booking Confirmed!</h1>
+            <div id="bookingDetails" class="booking-details">
+                <!-- JS will populate this -->
+            </div>
+            <p>We've sent the details to your email. You can track your shipment using the link below.</p>
+            <a href="#" id="trackingLink" class="track-btn">Track Shipment</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 QuickShip. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Display booking details from URL params
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courier = urlParams.get('courier');
+            const amount = urlParams.get('amount');
+            const txn = urlParams.get('txn');
+
+            document.getElementById('bookingDetails').innerHTML = `
+                <p><strong>Courier:</strong> ${courier}</p>
+                <p><strong>Amount Paid:</strong> ₹${amount}</p>
+                <p><strong>Transaction ID:</strong> ${txn}</p>
+            `;
+
+            // Set tracking link based on courier (example)
+            const trackingLink = document.getElementById('trackingLink');
+            if (courier === 'DTDC') {
+                trackingLink.href = 'https://www.dtdc.com/tracking.asp';
+            } else if (courier === 'Delhivery') {
+                trackingLink.href = 'https://www.delhivery.com/track/';
+            }
+        });
+    </script>
+</body>
+</html>
